@@ -1,0 +1,5 @@
+<form action="item-form_submit" method="POST" accept-charset="utf-8">
+	{% csrf_token %}
+	{{ form }}
+	<button type="submit">Save</button>
+</form>
