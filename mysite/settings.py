@@ -32,6 +32,7 @@ ALLOWED_HOSTS = config("ALLOWED_HOSTS", cast=Csv())
 # Application definition
 
 INSTALLED_APPS = [
+    "users.apps.UsersConfig",
     "food.apps.FoodConfig",
     "django.contrib.admin",
     "django.contrib.auth",
