@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.template import loader
 from .models import Item
 from .forms import ItemForm
@@ -8,6 +9,10 @@ def index(request):
     item_list = Item.objects.all()
     context = {"item_list": item_list}
     return render(request, "food/index.html", context)
+
+
+def item(request):
+    return HttpResponse("<h1>this is an item view</h1>")
 
 
 def detail(request, item_id):
@@ -37,3 +42,13 @@ def update_item(request, item_id):
         return redirect("food:index")
 
     return render(request, "food/item-form.html", {"form": form, "item": item})
+
+
+def delete_item(request, id):
+    item = Item.objects.get(id=id)
+
+    if request.method == "POST":
+        item.delete()
+        return redirect("food:index")
+
+    return render(request, "food/item-delete.html", {"item": item})
