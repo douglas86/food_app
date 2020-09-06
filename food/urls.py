@@ -8,7 +8,7 @@ urlpatterns = [
     #  item
     path("item/", views.item, name="item"),
     # /item_id number
-    path("<int:item_id>/", views.detail, name="detail"),
+    path("<int:pk>/", views.FoodDetail.as_view(), name="detail"),
     #  add items
     path("add/", views.create_items, name="create_items"),
     #  edit
