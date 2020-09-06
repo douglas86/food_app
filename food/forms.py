@@ -11,10 +11,3 @@ class ItemForm(forms.ModelForm):
             "item_price",
             "item_image",
         ]
-
-        widgets = {
-                'item_name':forms.TextInput(attrs={'class':'form-control'}),
-                'item_desc':forms.TextInput(attrs={'class':'form-control'}),
-                'item_price':forms.TextInput(attrs={'class':'form-control'}),
-                'item_image':forms.TextInput(attrs={'class':'form-control'}),
-                }
