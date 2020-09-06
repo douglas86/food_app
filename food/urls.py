@@ -4,7 +4,7 @@ from django.urls import path
 app_name = "food"
 urlpatterns = [
     # home
-    path("", views.index, name="index"),
+    path("", views.IndexClassView.as_view(), name="index"),
     #  item
     path("item/", views.item, name="item"),
     # /item_id number
